@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Document</title>
+</head>
+<body class="body_all">
+<nav class="navbar navbar-expand-lg navbar_back sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/insta_logo.png' %}" alt="логотип" width="130" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {% if user.is_authenticated %}
+        <div class="d-flex justify-content-center p-0 m-0 parent-search-results me-5">
+            <form class="d-flex " role="search">
+                <input class="search-input-block form-control ps-4 rounded-0"
+                       type="search" name="search"
+                       placeholder="&#128269; Поиск" value="{{ search_value }}"
+                       aria-label="Search" autocomplete="off">
+            </form>
+        </div>
+        {% endif %}
+        <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                        <span class="nav-link fw-bold">
+                            <a href="{% url 'profile' user.id %}" class=""><img src="{% static 'img/no_image.jpeg' %}"
+                                                                                alt="аватар" width="50"></a>
+                        </span>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'login' %}?next={{ request.get_full_path }}">Войти</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% if user.is_authenticated %}
+{% if search_value %}
+<div class="search-results pt-3">
+    {% for user in users %}
+    <a href="{% url 'profile' user.id %}" class="nav-link fw-semibold fs-5">
+        <div class="d-flex align-items-center ms-3">
+            <img src="{{ user.profile.avatar.url }}" alt="Аватар"
+                 class="rounded-circle border border-black mx-2" height="40" width="40">
+            <div class="fs-6">
+                {{ user.username }} <br>
+                {{ user.first_name }} ({{ user.email }})
+            </div>
+        </div>
+    </a>
+    <hr class="{% if forloop.last %}mb-0{% endif %}">
+    {% empty %}
+    <div class="text-center">
+        <p class="fs-6">Пользователей не найдено</p>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endif %}
+
+{% if user.is_authenticated %}
+{% if request.path == '/' %}
+<div class="post-add ms-5">
+    <a class="text-decoration-none btn" aria-current="page" href="{% url 'post_add' %}">
+        <i class="fa-regular fa-square-plus fa-2x"></i>
+    </a>
+</div>
+{% endif %}
+{% endif %}
+
+<div class="{% if '/publication/detail' not in request.path %}container{% endif %}">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/bs.js' %}"></script>
+</body>
+</html>

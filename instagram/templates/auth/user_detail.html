@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block content %}
+
+<div class="container">
+    <div class="d-inline-block mt-5 ms-5 me-5 mb-4">
+        <div class="me-5 ">
+            {% if user_profile.profile.avatar %}
+            <img src="{{ user_profile.profile.avatar.url }}" alt="аватар" class="img-fluid" style="border-radius: 50%;"
+                 width="200">
+            {% endif %}
+        </div>
+    </div>
+
+    <div class=" d-inline-block  align-middle">
+        <div class="">
+
+            <h1 class="d-inline-block mb-4">{{ user_profile.username }}</h1>
+            {% if user_profile == request.user %}
+                <div class="dropdown d-inline-block ms-5 mt-2 align-top">
+                    <a class="btn text-decoration-none " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-bars fs-3"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'user_update' %}">Редактировать профиль</a></li>
+                        <li><a class="dropdown-item" href="{% url 'change_password' %}">Сменить пароль</a></li>
+                        <li><a class="dropdown-item" href="{% url 'logout' %}">Выйти</a></li>
+                    </ul>
+                </div>
+            {% endif %}
+            <br>
+            <p class="d-inline-block me-5"><span>{{ user_profile.profile.publication_count }}</span>
+                {{ user_profile.profile.publication_count|pluralize_publications }}
+            </p>
+            <a href="{% url 'users_followers' user_profile.id %}" class="text-decoration-none text-black">
+                <p class="d-inline-block me-5">
+                    <span>{{ user_profile.profile.followers_count }}</span>
+                    {{ user_profile.profile.followers_count|pluralize_followers }}
+                </p>
+            </a>
+            <a href="{% url 'users_sub' user_profile.id %}" class="text-decoration-none text-black">
+                <p class="d-inline-block">
+                    <span>{{ user_profile.profile.following_count }}</span>
+                    {{ user_profile.profile.following_count|pluralize_followings }}
+                </p>
+            </a>
+            <div class="">
+                <p><strong>{{ user_profile.first_name }}</strong><br>{{ user_profile.profile.bio }}️</p>
+            </div>
+            <div class="">
+                {% if user.is_authenticated %}
+                    {% if user != user_profile %}
+                        {% if not followed %}
+                            <form action="{% url 'follow' user_profile.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary">
+                                    Подписаться
+                                </button>
+                            </form>
+                        {% else %}
+                            <form action="{% url 'unfollow' follow_obj.id %}" method="post">
+                                {% csrf_token %}
+                                <button class="btn btn-danger">Отписаться</button>
+                            </form>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container mt-4">
+
+    <div class="row">
+        {% for i in posts %}
+        <div class="col-3 my-2">
+            <a href="{% url 'post_detail' post_id=i.id %}">
+                <img src="{{ i.image.url }}" alt="Изображение поста" width="300" height="300">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

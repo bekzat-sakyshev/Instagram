@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 mt-5">
+    {% for i in users %}
+      <div class="col">
+        <div class="card">
+          <a href="{% url 'profile' i.id %}" class="btn flex-grow-1">
+            {% if i.profile.avatar %}
+              <img src="{{ i.profile.avatar.url }}" alt="user_avatar" class="img-fluid mt-3" style="width: 180px; border-radius: 10px;">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title mb-3">{{ i.username }}</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

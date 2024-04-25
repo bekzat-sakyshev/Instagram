@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center my-4">
+        <div class="col-4 border border-secondary-subtle px-5 pt-5 pb-3 navbar_back">
+
+            <div class="text-center">
+                <img class="logo-block" src="{% static 'img/insta_logo.png' %}" alt="Logo" width="300" height="100">
+                <div class="fw-semibold fs-6 text-secondary my-2">
+                    Редактировать профиль
+                    <hr class="border border-black">
+                </div>
+            </div>
+
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {% include 'partial/form.html' with fields_only=True %}
+                {% include 'partial/form.html' with form=profile_form fields_only=True %}
+
+                <div class="form-group mt-4">
+                    <label for="gender" class="mb-2 ms-2">Пол</label>
+                    <select name="gender" id="gender" class="form-control bg-body-tertiary"
+                            onchange="showCustomGender()">
+                        {% for choice_value, choice_option in gender_choices %}
+                        <option value="{{ choice_value }}" {% if choice_value == 'не указано' %}selected{% endif %}>
+                        {{ choice_option }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group" id="customGenderBlock" style="display: none;">
+                    <label for="custom_gender"></label>
+                    <input type="text" name="custom_gender" id="custom_gender" class="form-control"
+                           placeholder="Свой вариант">
+                </div>
+
+                 <div class="text-center mb-3">
+                    <button class="btn btn-success  mt-5 me-5">Изменить</button>
+                    <a href="{% url 'index' %}" class="btn btn-danger mt-5 ms-5">Отменить</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function showCustomGender() {
+        var genderSelect = document.getElementById("gender");
+        var customGenderBlock = document.getElementById("customGenderBlock");
+
+        if (genderSelect.value === "свой вариант") {
+            customGenderBlock.style.display = "block";
+        } else {
+            customGenderBlock.style.display = "none";
+        }
+    }
+</script>
+
+{% endblock %}

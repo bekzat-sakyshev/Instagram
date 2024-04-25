@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row p-0">
+        <div class="col-8">
+            <img src="{{ post.image.url }}" alt="Изображение поста" width="600" height="600" class="fixed-image">
+        </div>
+        <div class="vertical-line p-0 bg-secondary pt-4"><span class="opacity-0">a</span></div>
+        <div class="col-3 post-info-block pt-4 ps-4">
+            <div class="mb-3">
+                <img src="{{ post.user.profile.avatar.url }}" alt="Аватар"
+                     class="rounded-circle border border-black mx-2" height="40" width="40">
+                <p class="d-inline">
+                    <a href="{% url 'profile' post.user.id %}" class="fw-semibold text-black text-decoration-none">
+                        {{ post.user }}
+                    </a>
+                    <span class="text-secondary ms-1">{{ post.created_at|custom_timesince }}</span>
+                </p>
+            </div>
+            <p class="ms-2">{{ post.text }}</p>
+            <a href='#' class="ms-2 fw-semibold text-decoration-none text-black mb-3"
+               data-bs-toggle="modal" data-bs-target="#exampleModal{{ post.id }}">
+                {{ post.like }} {{ post.like|pluralize_likes }} "Нравится"
+            </a>
+
+            <div class="modal fade" id="exampleModal{{ post.id }}" tabindex="-1"
+                 aria-labelledby="exampleModalLabel{{ post.id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title fs-6 ms-3" id="exampleModalLabel">Отметки "Нравится"</h3>
+                            <button type="button" class="btn-close m-0" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body py-0">
+                            {% for like in post.likes.all %}
+                            <div class="d-flex my-3 align-items-center">
+                                <div class="">
+                                    <img src="{{ like.user.profile.avatar.url }}" alt="Аватар"
+                                         class="rounded-circle border border-black mx-2" height="40" width="40">
+                                </div>
+                                <div>
+                                    <a href="{% url 'profile' like.user.id %}"
+                                       class="m-0 fw-semibold text-black text-decoration-none">
+                                        {{ like.user }}
+                                    </a>
+                                    <p class="m-0">{{ like.user.first_name }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                {% for comment in post.comments.all %}
+                <div class="d-flex my-4">
+                    <div class="">
+                        <img src="{{ comment.user.profile.avatar.url }}" alt="Аватар"
+                             class="rounded-circle border border-black mx-2" height="40" width="40">
+                    </div>
+                    <div>
+                        <a href="{% url 'profile' comment.user.id %}"
+                           class="m-0 fw-semibold text-black text-decoration-none">
+                            {{ comment.user }}
+                        </a>
+                        <span class="text-secondary ms-1">{{ comment.created_at|custom_timesince }}</span>
+                        <br>
+                        {{ comment }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

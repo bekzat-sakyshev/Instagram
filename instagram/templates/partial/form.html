@@ -1,0 +1,29 @@
+{% if not fields_only %}
+    <form method="{{ request_method|default:'get' }}" action="{{ action_url|default:'' }}" enctype="multipart/form-data">
+    {% csrf_token %}
+{% endif %}
+
+{% for error in form.non_field_errors %}
+    <div class="alert alert-danger mt-3">{{ error }}</div>
+{% endfor %}
+
+{% for field in form %}
+
+    <div class="my-2">
+        <div class="mb-1 fs-5">{{ field.label }}</div>
+        <div>{{ field }}</div>
+    </div>
+
+    {% if field.errors %}
+
+        {% for error in field.errors %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endfor %}
+
+    {% endif %}
+{% endfor %}
+
+{% if not fields_only %}
+    <button class="btn {{ btn_type|default:'btn-primary' }} mt-3">{{ btn_text|default:'Submit'}}</button>
+    </form>
+{% endif %}

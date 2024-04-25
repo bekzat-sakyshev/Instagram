@@ -1,0 +1,387 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$LQkYGQXmqVSuLL9J7dCK7k$h9ED8rOGuLTIpOnrstBF0IxD9ugZJXfZCrBNpj0Uzpc=",
+        "last_login": "2024-03-21T08:52:05.254Z",
+        "is_superuser": false,
+        "username": "miranda_smith",
+        "first_name": "Миранда",
+        "last_name": "Смит",
+        "email": "miranda.smith@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:40:16.777Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$x8ZryvEwcBADbJ3bbgw4wk$yT8bmZYz3to2wSMHAEEsXywTKbgjNkskvkXJUu8Imvo=",
+        "last_login": "2024-03-21T09:57:11.667Z",
+        "is_superuser": false,
+        "username": "ethan_johnson",
+        "first_name": "Этан",
+        "last_name": "Джонсон",
+        "email": "ethan.johnson@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:41:50.782Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$5vdHhDKxwAszc764dZwThb$hwcYonULnKAj54cUTAWXeW7irkQdTQtgArkbWH8rNwc=",
+        "last_login": "2024-03-21T09:37:10.060Z",
+        "is_superuser": false,
+        "username": "olivia_williams",
+        "first_name": "Оливия",
+        "last_name": "Уильямс",
+        "email": "olivia.williams@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:42:56.966Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$Gi2b8Eyfp8JcZeaR04QeOF$rEoaV+e67zfDy7TnhFZxXZqipB2ZvEwLb8TQdUy6bTc=",
+        "last_login": "2024-03-21T09:47:14.043Z",
+        "is_superuser": false,
+        "username": "benjamin_brown",
+        "first_name": "Бенджамин",
+        "last_name": "Браун",
+        "email": "benjamin.brown@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:45:48.995Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$IPHG2FaBK6cyibG0iRv72F$acrZ/jJDvnx5eCPEuxroXaa8XrnHbYXkYCfU7NEHrso=",
+        "last_login": "2024-03-21T09:53:30.290Z",
+        "is_superuser": false,
+        "username": "sofia_davis",
+        "first_name": "София",
+        "last_name": "Дэвис",
+        "email": "sofia.davis@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:46:42.712Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$hCXhHqbTD39ISE7JkydhSJ$2we2xpFIgjk1Et1IUgL3eZOq6IEGx/MCdjeMZSvcN4I=",
+        "last_login": "2024-03-21T09:50:56.722Z",
+        "is_superuser": false,
+        "username": "liam_taylor",
+        "first_name": "Лиам",
+        "last_name": "Тейлор",
+        "email": "liam.taylor@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:47:47.597Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$LwmY390sh1LBH0x1ya9Wnm$e96ggIHBkIYS4w7Jrv1hWJbKzLQKlWcEBMkwLKgVYVw=",
+        "last_login": "2024-03-21T09:50:25.109Z",
+        "is_superuser": false,
+        "username": "emma_martin",
+        "first_name": "Эмма",
+        "last_name": "Мартин",
+        "email": "emma.martin@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:48:43.943Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$cp86ZydMRF8bfVqUNpD6nc$tpCPcGMKtezWRyBqQhP63hXM+03p005bPTymNYvuuwc=",
+        "last_login": "2024-03-21T09:38:16.531Z",
+        "is_superuser": false,
+        "username": "noah_thompson",
+        "first_name": "Ноа",
+        "last_name": "Томпсон",
+        "email": "noah.thompson@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:50:00.563Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$T153Lq8smGJdNeo7ggGCHy$djpvlXEOn23l+ZAbGMca6+QJkScSf+6tkZPDg3/b4eo=",
+        "last_login": "2024-03-21T09:31:54.011Z",
+        "is_superuser": false,
+        "username": "isabel_harris",
+        "first_name": "Изабель",
+        "last_name": "Харрис",
+        "email": "isabel.harris@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:50:47.387Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$wfRHzxypnsBNwD3OKprxcg$pmESasRQl9z+kMRFwFVXL+6p5K1U0o0JE3q3U/WNaJM=",
+        "last_login": "2024-03-21T09:22:58.541Z",
+        "is_superuser": false,
+        "username": "aiden_walker",
+        "first_name": "Айден",
+        "last_name": "Уолкер",
+        "email": "aiden.walker@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-18T17:51:58.934Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 17,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$Rlez6QjdrG1K2FnbpwtJtq$yUDGQuhKLN81etYdTOotrc3Ob5rJn9/emMtqoZ4hpVU=",
+        "last_login": "2024-03-21T10:13:46.573Z",
+        "is_superuser": false,
+        "username": "guest",
+        "first_name": "Guest",
+        "last_name": "Guestovich",
+        "email": "guest@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-03-21T10:10:35.853Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "miranda_smith"
+        ],
+        "avatar": "avatars/w-2.jpg",
+        "bio": "Люблю читать книги и готовить вкусные блюда",
+        "phone_number": "79123456789",
+        "gender": "женский",
+        "custom_gender": "",
+        "publication_count": 2,
+        "following_count": 4,
+        "followers_count": 4
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 7,
+    "fields": {
+        "user": [
+            "ethan_johnson"
+        ],
+        "avatar": "avatars/m-3.jpg",
+        "bio": "Путешественник и любитель экстремальных видов спорта",
+        "phone_number": "79234567890",
+        "gender": "мужской",
+        "custom_gender": "",
+        "publication_count": 1,
+        "following_count": 5,
+        "followers_count": 4
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 8,
+    "fields": {
+        "user": [
+            "olivia_williams"
+        ],
+        "avatar": "avatars/w-1.jpg",
+        "bio": "Фотограф и мечтатель, ищущий красоту во всем",
+        "phone_number": "79345678901",
+        "gender": "женский",
+        "custom_gender": "",
+        "publication_count": 5,
+        "following_count": 3,
+        "followers_count": 6
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 9,
+    "fields": {
+        "user": [
+            "benjamin_brown"
+        ],
+        "avatar": "avatars/m-2.jpg",
+        "bio": "Люблю путешествовать и открывать для себя новые культуры",
+        "phone_number": "79456789012",
+        "gender": "мужской",
+        "custom_gender": "",
+        "publication_count": 1,
+        "following_count": 4,
+        "followers_count": 5
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 10,
+    "fields": {
+        "user": [
+            "sofia_davis"
+        ],
+        "avatar": "avatars/w-5.jpg",
+        "bio": "Программист, увлекающийся новыми технологиями",
+        "phone_number": "79456789012",
+        "gender": "женский",
+        "custom_gender": "",
+        "publication_count": 1,
+        "following_count": 3,
+        "followers_count": 4
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 11,
+    "fields": {
+        "user": [
+            "liam_taylor"
+        ],
+        "avatar": "avatars/m-5.jpg",
+        "bio": "Фанат музыки и спорта, ищущий приключения в повседневной жизни.",
+        "phone_number": "79678901234",
+        "gender": "мужской",
+        "custom_gender": "",
+        "publication_count": 1,
+        "following_count": 3,
+        "followers_count": 4
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 12,
+    "fields": {
+        "user": [
+            "emma_martin"
+        ],
+        "avatar": "avatars/w-3.jpg",
+        "bio": "Страсть к креативному искусству и красивым вещам",
+        "phone_number": "79789012345",
+        "gender": "женский",
+        "custom_gender": "",
+        "publication_count": 1,
+        "following_count": 4,
+        "followers_count": 5
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 13,
+    "fields": {
+        "user": [
+            "noah_thompson"
+        ],
+        "avatar": "avatars/m-1.jpg",
+        "bio": "Люблю читать и изучать новые языки",
+        "phone_number": "79890123456",
+        "gender": "мужской",
+        "custom_gender": "",
+        "publication_count": 2,
+        "following_count": 4,
+        "followers_count": 5
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 14,
+    "fields": {
+        "user": [
+            "isabel_harris"
+        ],
+        "avatar": "avatars/w-4.jpg",
+        "bio": "Стремлюсь к гармонии и балансу в жизни",
+        "phone_number": "79901234567",
+        "gender": "женский",
+        "custom_gender": "",
+        "publication_count": 1,
+        "following_count": 2,
+        "followers_count": 4
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 15,
+    "fields": {
+        "user": [
+            "aiden_walker"
+        ],
+        "avatar": "avatars/m-4.jpg",
+        "bio": "Люблю спорт и активный образ жизни",
+        "phone_number": "70012345678",
+        "gender": "мужской",
+        "custom_gender": "",
+        "publication_count": 3,
+        "following_count": 4,
+        "followers_count": 4
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 17,
+    "fields": {
+        "user": [
+            "guest"
+        ],
+        "avatar": "avatars/quest.jpg",
+        "bio": "Аккаунт гостевого пользователя, подписан на всех, и лайкнул каждый пост (ред.)",
+        "phone_number": "12345678910",
+        "gender": "свой вариант",
+        "custom_gender": "My option of gender",
+        "publication_count": 0,
+        "following_count": 10,
+        "followers_count": 0
+    }
+}
+]
